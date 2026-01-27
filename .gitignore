@@ -1,0 +1,72 @@
+## =========================
+## .NET / Blazor Server
+## =========================
+
+# Build results
+bin/
+obj/
+out/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.cache
+*.log
+
+# Visual Studio Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.Local.json
+
+# Secrets
+secrets.json
+*.pfx
+
+# Publish
+publish/
+wwwroot/_framework/
+wwwroot/_content/
+
+# Blazor / Web
+wwwroot/lib/
+wwwroot/node_modules/
+
+# Logs
+logs/
+*.log
+
+# Test results
+TestResults/
+
+# Docker
+docker-compose.override.yml
+.env
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# Temp
+*.tmp
+*.temp
+*.bak
