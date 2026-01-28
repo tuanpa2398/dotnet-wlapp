@@ -1,0 +1,23 @@
+﻿<MudAppBar Elevation="0" Class="app-header">
+
+    <MudIconButton Icon="@Icons.Material.Filled.Menu"
+                   Edge="Edge.Start"
+                   OnClick="OnMenuClick" Style="color: black"/>
+
+    <MudSpacer />
+
+    <MudText Typo="Typo.body1" Class="me-2">
+        Phạm Anh Tuấn
+    </MudText>
+
+    <MudMenu Icon="@Icons.Material.Filled.AccountCircle" Style="font-weight: bold" Color="Color.Inherit" Edge="Edge.End">
+        <MudMenuItem>Trang cá nhân</MudMenuItem>
+        <MudMenuItem>Đổi nhà máy</MudMenuItem>
+        <MudMenuItem>Đăng xuất</MudMenuItem>
+    </MudMenu>
+
+</MudAppBar>
+
+@code {
+    [Parameter] public EventCallback OnMenuClick { get; set; }
+}

@@ -1,0 +1,76 @@
+﻿@page "/login"
+@layout WebApp.Components.Layout.EmptyLayout
+
+<MudContainer MaxWidth="MaxWidth.False" Class="login-root">
+
+    <MudPaper Elevation="4" Class="login-card">
+        <MudStack AlignItems="AlignItems.Center" Spacing="1" Class="mb-4">
+            <MudImage Src="images/woodsland.svg" Width="72" Height="72" />
+            <MudText Typo="Typo.caption" Color="Color.Secondary" Style="font-weight: bold" Class="mt-3 mb-3">
+                Đăng nhập để tiếp tục.
+            </MudText>
+        </MudStack>
+
+        <MudTextField @bind-Value="_username"  T="string"
+        Label="Mã nhân viên"
+        Variant="Variant.Outlined"
+        InputType="InputType.Password"
+        Placeholder="26T0000"
+        FullWidth="true"
+                      Immediate="true"
+        Class="mb-5" />
+
+        <MudTextField  @bind-Value="_password" T="string"
+        Label="Mật khẩu"
+        Variant="Variant.Outlined"
+        InputType="InputType.Password"
+        Placeholder="******"
+        FullWidth="true"
+        Immediate="true"
+        Class="mb-5" />
+
+
+        <MudButton Variant="Variant.Outlined"
+        Color="Color.Primary"
+        FullWidth="true"
+        Size="Size.Large" 
+        Class="btn-login"
+                   Disabled="@IsDisabled" OnClick="AsyncLogin">
+            @if (_loading)
+            {
+                <MudProgressCircular Indeterminate Size="Size.Small" Class="me-2" />
+                <span>Đang đăng nhập...</span>
+            }
+            else
+            {
+                <span>Đăng nhập</span>
+            }
+        </MudButton>
+
+    </MudPaper>
+
+</MudContainer>
+
+@code {
+    private string? _username;
+    private string? _password;
+    private bool _loading;
+
+    private bool IsDisabled => (string.IsNullOrWhiteSpace(_username) || string.IsNullOrWhiteSpace(_password));
+
+    private async Task AsyncLogin()
+    {
+        _loading = true;
+
+        try
+        {
+            await Task.Delay(500);
+
+            Nav.NavigateTo("/", forceLoad: true);
+        }
+        finally
+        {
+            _loading = false;
+        }
+    }
+}

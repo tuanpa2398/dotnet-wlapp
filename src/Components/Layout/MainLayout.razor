@@ -6,24 +6,17 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1" Color="Color.Transparent">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        @* <MudImage Src="favicon.ico" Class="mx-3"></MudImage> *@
-        <MudText Typo="Typo.h5" Class="ml-3">Application</MudText>
-        <MudSpacer />
-        @* <MudIconButton Icon="@(DarkLightModeButtonIcon)" Color="Color.Inherit" OnClick="@DarkModeToggle" /> *@
-        <MudMenu  Icon="@Icons.Material.Filled.AccountCircle" Style="font-weight: bold" Color="Color.Inherit" Edge="Edge.End" >
-            <MudMenuItem>Trang cá nhân</MudMenuItem>
-            <MudMenuItem>Đổi nhà máy</MudMenuItem>
-            <MudMenuItem>Đăng xuất</MudMenuItem>
-        </MudMenu>
-    </MudAppBar>
-    <MudDrawer id="nav-drawer" @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+    <MudDrawer @bind-Open="_drawerOpen"
+               Variant="DrawerVariant.Responsive"
+               Elevation="0"
+               Class="app-drawer">
         <NavMenu />
     </MudDrawer>
-    <MudMainContent Class="d-flex flex-column" Style="height:100vh">
-        <MudContainer MaxWidth="MaxWidth.False" Style="overflow:auto" Class="pt-5 px-10 body-wrapper flex-grow-1">
-             <MudPaper Class="pa-5">
+
+    <MudMainContent>
+        <TopBar OnMenuClick="ToggleDrawer" />
+        <MudContainer MaxWidth="MaxWidth.False" Style="overflow:auto" Class="pt-5 px-10 body-wrapper flex-grow-1 app-body">
+            <MudPaper Class="pa-5 ">
                 @Body
             </MudPaper>
         </MudContainer>
@@ -40,12 +33,7 @@
 @code {
     private bool _drawerOpen = true;
 
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-    }
-
-    private void DrawerToggle()
+    private void ToggleDrawer()
     {
         _drawerOpen = !_drawerOpen;
     }

@@ -1,19 +1,27 @@
-﻿<MudNavMenu Class="side-bar" Style="height: 100%">
-    <MudText Typo="Typo.caption">
-        DASHBOARD
-    </MudText>
+﻿<MudContainer Class="sidebar-root" DisableGutters>
+    <MudContainer Class="sidebar-header d-flex flex-column align-center justify-center mb-3 cursor-pointer" DisableGutters>
+        <MudImage Src="images/WLorigin.svg" Width="84" @onclick="navigate" />
+    </MudContainer>
 
-    <MudNavLink Href="/" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">
-        Dashboard
-    </MudNavLink>
+    <MudNavMenu Dense="true" >
+        <MudText Typo="Typo.caption">
+            DASHBOARD
+        </MudText>
+        <MudNavLink Match="NavLinkMatch.All" Href="/" Icon="@Icons.Material.Filled.Description" Class="active">
+            Dashboard
+        </MudNavLink>
 
-    <MudText Typo="Typo.caption">
-        USER
-    </MudText>
+        <MudText Typo="Typo.caption">
+            USER
+        </MudText>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Gavel">
+            Quản lý người dùng
+        </MudNavLink>
+    </MudNavMenu>
+</MudContainer>
 
-    <MudNavLink Href="/users" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Group">
-        Users
-    </MudNavLink>
-</MudNavMenu>
-
-
+@code {
+    public void navigate(){
+        Nav.NavigateTo("/");
+    }
+}
