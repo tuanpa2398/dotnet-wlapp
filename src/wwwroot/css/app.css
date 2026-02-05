@@ -28,16 +28,26 @@ body {
     height: 64px;
     background-color: #ffffff !important;
     border-bottom: 1px solid #eee;
-    width: calc(100% - 500px);
-    transition: margin-left 0.2s ease;
     color: black !important;
 }
 
-.app-body {
-    background-color: #F5F5F5 !important;
-    padding: 20px 24px !important;
-    min-height: calc(100vh - 64px);
+.app-header .mud-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 }
+
+    .app-header .user-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .app-body {
+        background-color: #F5F5F5 !important;
+        padding: 20px 24px !important;
+        min-height: calc(100vh - 64px);
+    }
 
 .mud-nav-item a.mud-nav-link {
     padding: 10px 25px !important;

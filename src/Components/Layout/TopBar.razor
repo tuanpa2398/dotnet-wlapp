@@ -1,24 +1,36 @@
 ﻿<MudAppBar Elevation="0" Class="app-header">
-    <MudIconButton Icon="@Icons.Material.Filled.Menu"
-    Edge="Edge.Start"
-    OnClick="OnMenuClick" Style="color: black"/>
+    <div>
+        @if (!_drawerOpen)
+        {
+            <MudIconButton Icon="@Icons.Material.Filled.Menu"
+                           Edge="Edge.Start"
+                           OnClick="OnMenuClick" Style="color: black" />
+        }
+        else
+        {
+            <MudIconButton Icon="@Icons.Material.Filled.Close"
+                           Edge="Edge.Start"
+                           OnClick="OnMenuClick" Style="color: black" />
+        }
+    </div>
 
-    <MudSpacer />
+    <div class="user-info">
+        <MudText Typo="Typo.body1" Class="me-2">
+            Phạm Anh Tuấn
+        </MudText>
 
-    <MudText Typo="Typo.body1" Class="me-2">
-        Phạm Anh Tuấn
-    </MudText>
-
-    <MudMenu Icon="@Icons.Material.Filled.AccountCircle" Style="font-weight: bold" Color="Color.Inherit" Edge="Edge.End">
-        <MudMenuItem>Trang cá nhân</MudMenuItem>
-        <MudMenuItem>Đổi nhà máy</MudMenuItem>
-        <MudMenuItem OnClick="SignOut">Đăng xuất</MudMenuItem>
-    </MudMenu>
+        <MudMenu Icon="@Icons.Material.Filled.AccountCircle" Style="font-weight: bold" Color="Color.Inherit" Edge="Edge.End">
+            <MudMenuItem>Trang cá nhân</MudMenuItem>
+            <MudMenuItem>Đổi nhà máy</MudMenuItem>
+            <MudMenuItem OnClick="SignOut">Đăng xuất</MudMenuItem>
+        </MudMenu>
+    </div>
     
 </MudAppBar>
 
 @code {
     [Parameter] public EventCallback OnMenuClick { get; set; }
+    [Parameter] public bool _drawerOpen { get; set; }
 
     public void SignOut () {
         Nav.NavigateTo("/login");
