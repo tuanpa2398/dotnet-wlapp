@@ -5,17 +5,74 @@
 
     <MudNavMenu Dense="true" >
         <MudText Typo="Typo.caption">
-            DASHBOARD
+            Quản trị hệ thống
         </MudText>
-        <MudNavLink Match="NavLinkMatch.All" Href="/" Icon="@Icons.Material.Filled.Description" Class="active">
-            Dashboard
+        <MudNavLink Match="NavLinkMatch.All" Href="/" Icon="@Icons.Material.Filled.Home" Class="active">
+            Trang chủ
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/dashboard" Icon="@Icons.Material.Filled.BarChart" >
+            Biểu đồ
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/bao-cao" Icon="@Icons.Material.Filled.Book">
+            Báo cáo
+        </MudNavLink>
+
+
+        <MudText Typo="Typo.caption">
+            Quản lý người dùng
+        </MudText>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Group">
+            Danh sách người dùng
         </MudNavLink>
 
         <MudText Typo="Typo.caption">
-            USER
+            Quản lý sấy gỗ
         </MudText>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Gavel">
-            Quản lý người dùng
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Sort">
+            Xếp sấy
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Create">
+            Tạo kế hoạch sấy
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Factory">
+           Lò sấy
+        </MudNavLink>
+
+        <MudText Typo="Typo.caption">
+            Ghi nhận sản lượng
+        </MudText>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+            Chế biến gỗ
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Kitchen">
+            Tủ bếp
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Flood">
+            Ván công nghiệp
+        </MudNavLink>
+        
+
+        <MudText Typo="Typo.caption">
+            Kiểm định chất lượng
+        </MudText>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+            Chế biến gỗ
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+            Ván công nghiệp
+        </MudNavLink>
+
+        <MudText Typo="Typo.caption">
+            Quản lý hàng hóa
+        </MudText>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+            Điều chuyển theo bin
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+            Kiểm kê vật tư
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+            Xác nhận thành phẩm lỗi
         </MudNavLink>
     </MudNavMenu>
 </MudContainer>

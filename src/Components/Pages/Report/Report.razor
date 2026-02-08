@@ -1,0 +1,29 @@
+﻿@page "/bao-cao"
+
+<PageTitle>Danh mục báo cáo</PageTitle>
+<MudText Class="page-title" Typo="Typo.h5" GutterBottom="true">DANH MỤC BÁO CÁO</MudText>
+
+<MudTabs Elevation="2" Rounded="true" ApplyEffectsToContainer="true" PanelClass="pa-6" Class="mt-4">
+    <MudTabPanel Text="Báo cáo sấy gỗ" Class="d-flex gap-2 flex-column flex-grow-1">
+        <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start">
+            <MudText Typo="Typo.button" HtmlTag="h3">
+                Biên bản vào lò
+            </MudText>
+
+            <MudText Typo="Typo.caption" Class="mt-1 mud-opacity-70">
+                Thông tin biên bảo vào lò
+            </MudText>
+        </MudAlert>
+    </MudTabPanel>
+    <MudTabPanel Text="Báo cáo chế biến gỗ">
+        <MudText>Content Two</MudText>
+    </MudTabPanel>
+    <MudTabPanel Text="Báo cáo ván công nghiệp">
+        <MudText>Content Three</MudText>
+    </MudTabPanel>
+</MudTabs>
+
+
+@code {
+
+}

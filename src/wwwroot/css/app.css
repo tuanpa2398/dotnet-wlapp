@@ -112,3 +112,16 @@ body {
 .mud-input {
     height: 45px !important;
 }
+
+.mud-alert-position{
+    display: flex;
+    align-items: center;
+}
+
+.mud-tab {
+    font-weight: 600;
+}
+
+.page-title {
+    font-weight: bolder;
+}
