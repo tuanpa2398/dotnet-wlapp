@@ -1,6 +1,7 @@
 ﻿﻿html body {
     height: 100vh
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -8,7 +9,16 @@ body {
 
 .app-drawer {
     width: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    scroll-behavior: smooth;
+    transition: all 0.3s ease;
 }
+
+.app-drawer::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
 
 .sidebar-root {
     height: 100%;
@@ -32,22 +42,22 @@ body {
 }
 
 .app-header .mud-toolbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-    .app-header .user-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+.app-header .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .app-body {
-        background-color: #F5F5F5 !important;
-        padding: 20px 24px !important;
-        min-height: calc(100vh - 64px);
-    }
+.app-body {
+    background-color: #F5F5F5 !important;
+    padding: 20px 24px !important;
+    min-height: calc(100vh - 64px);
+}
 
 .mud-nav-item a.mud-nav-link {
     padding: 10px 25px !important;
@@ -65,9 +75,9 @@ body {
 }
 
 
-.mud-nav-item a.mud-nav-link.active .mud-nav-link-icon {
-    color: #594ae2 !important;
-}
+    .mud-nav-item a.mud-nav-link.active .mud-nav-link-icon {
+        color: #594ae2 !important;
+    }
 
 .login-root {
     min-height: 100vh !important;
@@ -94,14 +104,14 @@ body {
     font-weight: bold;
 }
 
-.btn-login:disabled {
-    color: #FFFFFF !important;
-    background-color: #F5F5F5 !important;
-}
+    .btn-login:disabled {
+        color: #FFFFFF !important;
+        background-color: #F5F5F5 !important;
+    }
 
-.btn-login:disabled:hover {
-    cursor: not-allowed !important;
-}
+        .btn-login:disabled:hover {
+            cursor: not-allowed !important;
+        }
 
 .mud-button-root {
     border-radius: 6px !important;
@@ -113,7 +123,7 @@ body {
     height: 45px !important;
 }
 
-.mud-alert-position{
+.mud-alert-position {
     display: flex;
     align-items: center;
 }
@@ -124,4 +134,21 @@ body {
 
 .page-title {
     font-weight: bolder;
+}
+
+.mud-table-head {
+    background-color: #f5f7fa;
+}
+
+.mud-table-cell {
+    font-size: 14px;
+}
+
+.page-title{
+    text-transform: uppercase;
+}
+.mud-data-grid {
+    border-top: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-left: 1px solid gainsboro;
 }

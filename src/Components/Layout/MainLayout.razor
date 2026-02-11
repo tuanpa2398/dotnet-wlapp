@@ -5,15 +5,16 @@
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<MudLayout>
+<MudLayout Class="d-flex">
     <MudDrawer @bind-Open="_drawerOpen"
+               Width="290px"
                Variant="DrawerVariant.Responsive"
                Elevation="0"
-               Class="app-drawer">
+               Class="app-drawer d-block">
         <NavMenu />
     </MudDrawer>
 
-    <MudMainContent>
+    <MudMainContent Class="main-content d-block">
         <TopBar OnMenuClick="ToggleDrawer" _drawerOpen="_drawerOpen" />
         <MudContainer MaxWidth="MaxWidth.False" Style="overflow:auto" Class="pt-5 px-10 body-wrapper flex-grow-1 app-body">
             <MudPaper Class="pa-5 ">

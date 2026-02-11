@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.HttpOverrides;
 using MudBlazor.Services;
 using WebApp.Components;
+using WebApp.Services.AuthService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,8 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
         ForwardedHeaders.XForwardedFor |
         ForwardedHeaders.XForwardedProto;
 });
+
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 
