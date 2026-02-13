@@ -1,9 +1,9 @@
-﻿@page "/users"
+﻿@page "/cxvbcvxbxcvbxcvb"
 @using WebApp.Models.User;
 
 <PageTitle>Quản lý người dùng</PageTitle>
 
-<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+<MudText Class="page-title" Typo="Typo.h5" GutterBottom="true">Quản lý người dùng</MudText>
 
 <MudDataGrid Items="users" ShowMenuIcon="false" ShowColumnOptions="false"
              Hover="true"
@@ -30,12 +30,6 @@
 
 @code {
     public List<User> users = new List<User>();
-
-    private List<BreadcrumbItem> _items =
-    [
-        new("Trang chủ", href: "/"),
-        new("Quản lý người dùng", href: null, disabled: true)
-    ];
 
     protected override async Task OnInitializedAsync()
     {

@@ -1,13 +1,92 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+ <PageTitle>Trang chủ</PageTitle> 
 
-<MudText Typo="Typo.h6" GutterBottom="true">Hello, world!</MudText>
-<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor and the .NET 9 Template!</MudText>
+@* <MudText Class="page-title" Typo="Typo.h5" GutterBottom="true">Trang chủ</MudText> *@
 
-<MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start">
-    You can find documentation and examples on our website here:
-    <MudLink Href="https://mudblazor.com" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
-        <b>www.mudblazor.com</b>
-    </MudLink>
-</MudAlert>
+<Fieldset LegendTitle="quản lý sấy gỗ">
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer" 
+        OnClick="@(() => navigate("/drying/stack"))"
+    >
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Xếp sấy
+        </MudText>
+    </MudAlert>
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3"  Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/drying/plan"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Kế hoạch sấy
+        </MudText>
+    </MudAlert>
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3"  Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/drying/oven"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Lò sấy
+        </MudText>
+    </MudAlert>
+</Fieldset>
+
+<Fieldset LegendTitle="Ghi nhận sản lượng">
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/production/wood-working"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Chế biến gỗ
+        </MudText>
+    </MudAlert>
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/production/kitchen-cabinet"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Tủ bếp
+        </MudText>
+    </MudAlert>
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/production/plywood"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Ván công nghiệp
+        </MudText>
+    </MudAlert>
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/production/plywood-lvl"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Ván công nghiệp - LVL
+        </MudText>
+    </MudAlert>
+</Fieldset>
+
+<Fieldset LegendTitle="Kiểm định chất lượng">
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/qc/wood-working"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Chế biến gỗ
+        </MudText>
+    </MudAlert>
+
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/qc/plywood"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Ván công nghiệp
+        </MudText>
+    </MudAlert>
+</Fieldset>
+
+<Fieldset LegendTitle="Quản lý hàng hóa">
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/inventory-transfer"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Điều chuyển theo bin
+        </MudText>
+    </MudAlert>
+    <MudAlert Severity="Severity.Normal" ContentAlignment="HorizontalAlignment.Start" Elevation="3" Class="mb-3 cursor-pointer"
+              OnClick="@(() => navigate("/inventory-counting"))">
+        <MudText Typo="Typo.button" HtmlTag="h3">
+            Kiểm kê vật tư
+        </MudText>
+    </MudAlert>
+</Fieldset>
+
+@code {
+    public void navigate(string url)
+    {
+        Nav.NavigateTo(url);
+    }
+}

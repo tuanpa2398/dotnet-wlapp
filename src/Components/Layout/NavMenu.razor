@@ -4,76 +4,79 @@
     </MudContainer>
 
     <MudNavMenu Dense="true" >
-        <MudText Typo="Typo.caption">
+        <MudText Typo="Typo.button">
             Quản trị hệ thống
         </MudText>
-        <MudNavLink Match="NavLinkMatch.All" Href="/" Icon="@Icons.Material.Filled.Home" Class="active">
+        <MudNavLink Match="NavLinkMatch.All" Href="/" Icon="@Icons.Material.Filled.Home">
             Trang chủ
         </MudNavLink>
         <MudNavLink Match="NavLinkMatch.All" Href="/dashboard" Icon="@Icons.Material.Filled.BarChart" >
             Biểu đồ
         </MudNavLink>
-        <MudNavLink Match="NavLinkMatch.All" Href="/bao-cao" Icon="@Icons.Material.Filled.Book">
+        <MudNavLink Match="NavLinkMatch.All" Href="/reports" Icon="@Icons.Material.Filled.Book">
             Báo cáo
         </MudNavLink>
 
 
-        <MudText Typo="Typo.caption">
+        <MudText Typo="Typo.button">
             Quản lý người dùng
         </MudText>
         <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Group">
             Danh sách người dùng
         </MudNavLink>
 
-        <MudText Typo="Typo.caption">
+        <MudText Typo="Typo.button">
             Quản lý sấy gỗ
         </MudText>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Sort">
+        <MudNavLink Match="NavLinkMatch.All" Href="/drying/stack" Icon="@Icons.Material.Filled.Sort">
             Xếp sấy
         </MudNavLink>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Create">
-            Tạo kế hoạch sấy
+        <MudNavLink Match="NavLinkMatch.All" Href="/drying/plan" Icon="@Icons.Material.Filled.Create">
+            Kế hoạch sấy
         </MudNavLink>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Factory">
+        <MudNavLink Match="NavLinkMatch.All" Href="/drying/oven" Icon="@Icons.Material.Filled.Factory">
            Lò sấy
         </MudNavLink>
 
-        <MudText Typo="Typo.caption">
+        <MudText Typo="Typo.button">
             Ghi nhận sản lượng
         </MudText>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+        <MudNavLink Match="NavLinkMatch.All" Href="/production/wood-working" Icon="@Icons.Material.Filled.Work">
             Chế biến gỗ
         </MudNavLink>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Kitchen">
+        <MudNavLink Match="NavLinkMatch.All" Href="/production/kitchen-cabinet" Icon="@Icons.Material.Filled.Kitchen">
             Tủ bếp
         </MudNavLink>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Flood">
+        <MudNavLink Match="NavLinkMatch.All" Href="/production/plywood" Icon="@Icons.Material.Filled.Flood">
+            Ván công nghiệp
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/production/plywood-lvl" Icon="@Icons.Material.Filled.Flood">
+            Ván công nghiệp - LVL
+        </MudNavLink>
+
+        <MudText Typo="Typo.button">
+            Kiểm định chất lượng
+        </MudText>
+        <MudNavLink Match="NavLinkMatch.All" Href="/qc/wood-working" Icon="@Icons.Material.Filled.Work">
+            Chế biến gỗ
+        </MudNavLink>
+        <MudNavLink Match="NavLinkMatch.All" Href="/qc/plywood" Icon="@Icons.Material.Filled.Work">
             Ván công nghiệp
         </MudNavLink>
         
 
-        <MudText Typo="Typo.caption">
-            Kiểm định chất lượng
-        </MudText>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
-            Chế biến gỗ
-        </MudNavLink>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
-            Ván công nghiệp
-        </MudNavLink>
-
-        <MudText Typo="Typo.caption">
+        <MudText Typo="Typo.button">
             Quản lý hàng hóa
         </MudText>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+        <MudNavLink Match="NavLinkMatch.All" Href="/inventory-transfer" Icon="@Icons.Material.Filled.Work">
             Điều chuyển theo bin
         </MudNavLink>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
+        <MudNavLink Match="NavLinkMatch.All" Href="/inventory-counting" Icon="@Icons.Material.Filled.Work">
             Kiểm kê vật tư
         </MudNavLink>
-        <MudNavLink Match="NavLinkMatch.All" Href="/users" Icon="@Icons.Material.Filled.Work">
-            Xác nhận thành phẩm lỗi
-        </MudNavLink>
+        @* <MudNavLink Match="NavLinkMatch.All" Href="/inventory-transfer" Icon="@Icons.Material.Filled.Work"> *@
+        @*     Xác nhận thành phẩm lỗi *@
+        @* </MudNavLink> *@
     </MudNavMenu>
 </MudContainer>
 

@@ -1,0 +1,13 @@
+﻿@page "/drying/oven"
+
+<PageTitle>Lò sấy</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Lò sấy", href: null, disabled: true)
+    ];
+}

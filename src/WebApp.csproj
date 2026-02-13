@@ -13,4 +13,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
     <PackageReference Include="MudBlazor" Version="8.*" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Components\NewFolder1\" />
+    <Folder Include="Components\Pages\NewFolder\" />
+  </ItemGroup>
 </Project>

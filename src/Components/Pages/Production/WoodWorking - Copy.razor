@@ -1,0 +1,13 @@
+﻿@page "/production/wood-working"
+
+<PageTitle>Ghi nhận sản lượng chế biến gỗ</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Ghi nhận sản lượng chế biến gỗ", href: null, disabled: true)
+    ];
+}

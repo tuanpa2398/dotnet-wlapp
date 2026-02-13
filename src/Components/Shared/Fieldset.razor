@@ -1,0 +1,13 @@
+﻿<fieldset class="app-fieldset">
+    <legend>@LegendTitle</legend>
+
+    @ChildContent
+</fieldset>
+
+@code {
+    [Parameter]
+    public string? LegendTitle { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}

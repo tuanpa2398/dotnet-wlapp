@@ -3,4 +3,8 @@
         <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
         <FocusOnNavigate RouteData="routeData" Selector="h1" />
     </Found>
+
+    <NotFound>
+        <WebApp.Components.Pages.Error></WebApp.Components.Pages.Error>
+    </NotFound>
 </Router>

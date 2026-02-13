@@ -1,0 +1,13 @@
+﻿@page "/drying/stack"
+
+<PageTitle>Tạo Pallet xếp sấy</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Tạo Pallet xếp sấy", href: null, disabled: true)
+    ];
+}
