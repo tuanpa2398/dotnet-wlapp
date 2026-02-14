@@ -1,0 +1,13 @@
+﻿@page "/inventory-counting"
+
+<PageTitle>Kiểm kê vật tư</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Kiểm kê vật tư", href: null, disabled: true)
+    ];
+}

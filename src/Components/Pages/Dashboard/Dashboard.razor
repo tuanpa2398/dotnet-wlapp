@@ -1,0 +1,13 @@
+﻿@page "/dashboard"
+
+<PageTitle>Thống kê</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Thống kê", href: null, disabled: true)
+    ];
+}

@@ -1,0 +1,13 @@
+﻿@page "/inventory-transfer"
+
+<PageTitle>Điều chuyển theo bin</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Điều chuyển theo bin", href: null, disabled: true)
+    ];
+}

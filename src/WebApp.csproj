@@ -8,15 +8,20 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
-    <PackageReference Include="MudBlazor" Version="8.*" />
+    <Compile Remove="Components\NewFolder1\**" />
+    <Compile Remove="Components\Pages\NewFolder\**" />
+    <Content Remove="Components\NewFolder1\**" />
+    <Content Remove="Components\Pages\NewFolder\**" />
+    <EmbeddedResource Remove="Components\NewFolder1\**" />
+    <EmbeddedResource Remove="Components\Pages\NewFolder\**" />
+    <None Remove="Components\NewFolder1\**" />
+    <None Remove="Components\Pages\NewFolder\**" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <Folder Include="Components\NewFolder1\" />
-    <Folder Include="Components\Pages\NewFolder\" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
+    <PackageReference Include="MudBlazor" Version="8.*" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
-﻿<MudAppBar Elevation="0" Class="app-header">
+﻿@using System.Globalization
+<MudAppBar Elevation="0" Class="app-header" >
     <div>
         @if (!_drawerOpen)
         {
@@ -13,6 +14,11 @@
                            OnClick="OnMenuClick" Style="color: black" />
         }
     </div>
+
+    <MudText Typo="Typo.button" Class="me-2 d-none d-md-inline" @Style="letter-spacing: 0.5px;">
+        @_today
+    </MudText>
+
 
     <div class="user-info">
         <MudText Typo="Typo.body1" Class="me-2">
@@ -32,7 +38,24 @@
     [Parameter] public EventCallback OnMenuClick { get; set; }
     [Parameter] public bool _drawerOpen { get; set; }
 
-    public void SignOut () {
+    private string _today { get; set; } = "";
+
+    protected override void OnInitialized()
+    {
+        currentDate();
+    }
+
+    private void SignOut()
+    {
         Nav.NavigateTo("/login");
+    }
+
+    private void currentDate()
+    {
+        var date = DateTime.Now.ToString(
+        "dddd 'ngày' d 'tháng' M 'năm' yyyy",
+        new CultureInfo("vi-VN"));
+
+            _today = char.ToUpper(date[0]) + date.Substring(1);
     }
 }

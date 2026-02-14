@@ -1,0 +1,13 @@
+﻿@page "/qc/wood-working"
+
+<PageTitle>Kiểm định chất lượng CBG</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Kiểm định chất lượng CBG", href: null, disabled: true)
+    ];
+}

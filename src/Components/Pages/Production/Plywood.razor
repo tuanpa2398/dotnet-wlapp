@@ -1,0 +1,13 @@
+﻿@page "/production/plywood"
+
+<PageTitle>Ghi nhận sản lượng ván công nghiệp</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Ghi nhận sản lượng ván công nghiệp", href: null, disabled: true)
+    ];
+}

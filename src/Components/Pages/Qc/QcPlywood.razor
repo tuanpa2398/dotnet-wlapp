@@ -1,0 +1,13 @@
+﻿@page "/qc/plywood"
+
+<PageTitle>Kiểm định chất lượng VCN</PageTitle>
+
+<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items =
+    [
+        new("Trang chủ", href: "/"),
+        new("Kiểm định chất lượng VCN", href: null, disabled: true)
+    ];
+}
