@@ -3,11 +3,11 @@
 
 <PageTitle>Quản lý người dùng</PageTitle>
 
-<MudPaper Class="d-flex" Elevation="0">
+<MudStack Class="d-flex align-center" Row="true">
     <MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
     <MudSpacer />
-    <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="d-none d-md-flex" OnClick="OpenDrawer">thêm mới</MudButton>
-</MudPaper>
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="d-none d-md-block" OnClick="OpenDrawer" Style="width: 120px">thêm mới</MudButton>
+</MudStack>
 
 
 <MudDataGrid Items="users" ShowMenuIcon="false" ShowColumnOptions="false" 
@@ -19,7 +19,7 @@
         <MudSpacer />
         <MudSpacer />
         <MudTextField Variant="Variant.Outlined" Placeholder=" Tìm kiếm theo mã hoặc tên nhân viên..." Adornment="Adornment.Start" Immediate="true"
-                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Small" Class="mt-0" />
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Small" Class="mt-0" Margin="Margin.Dense"/>
     </ToolBarContent>
     <Columns>
         <PropertyColumn Property="x => x.Username" Title="Username" Sortable="false" Filterable="true"/>
@@ -33,7 +33,7 @@
     </PagerContent>
 </MudDataGrid>
 
-<MudDrawer Class="add-user-drawer" Width="500px" @bind-Open="@_open" Anchor="Anchor.End" Elevation="1" Variant="@DrawerVariant.Temporary" OverlayAutoClose="false">
+<MudDrawer Class="add-user-drawer" Width="400px" @bind-Open="@_open" Anchor="Anchor.End" Elevation="1" Variant="@DrawerVariant.Temporary" OverlayAutoClose="false">
     <MudDrawerHeader Class="d-flex justify-space-between">
         <MudText Typo="Typo.h6">Thêm mới người dùng</MudText>
         <MudIcon Icon="@Icons.Material.Filled.Close" Title="Đóng" Class="cursor-pointer" @onclick="CloseDrawer" />
@@ -42,29 +42,29 @@
         <MudExpansionPanels MultiExpansion="true">
             <MudExpansionPanel Text="Thông tin cơ bản" Expanded="true" HeaderClass="header-panel" Disabled="true">
                 <MudStack Class="d-flex gap-1">
-                    <MudTextField T="string" ShrinkLabel Label="Họ tên" Variant="Variant.Outlined"></MudTextField>
-                    <MudTextField T="string" ShrinkLabel Label="Mã nhân viên" Variant="Variant.Outlined"></MudTextField>
-                    <MudTextField T="string" ShrinkLabel Label="Mật khẩu" Variant="Variant.Outlined" InputType="@_inputType"
+                    <MudTextField Margin="Margin.Dense" T="string" ShrinkLabel Label="Họ tên" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField Margin="Margin.Dense" T="string" ShrinkLabel Label="Mã nhân viên" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField Margin="Margin.Dense" T="string" ShrinkLabel Label="Mật khẩu" Variant="Variant.Outlined" InputType="@_inputType"
                                      Adornment="Adornment.End"
                                   AdornmentIcon="@_iconPassword"
                                   OnAdornmentClick="TogglePassword"
                                   AdornmentAriaLabel="Hiện/ẩn mật khẩu">
                      </MudTextField>
-                    <MudTextField T="string" ShrinkLabel Label="Vai trò" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField Margin="Margin.Dense" T="string" ShrinkLabel Label="Vai trò" Variant="Variant.Outlined"></MudTextField>
                 </MudStack>
             </MudExpansionPanel>
             <MudExpansionPanel Text="Đồng bộ SAP" Expanded="true" HeaderClass="header-panel" Disabled="true">
                 <MudStack Class="d-flex gap-1">
-                    <MudTextField T="string" ShrinkLabel Label="SAP ID" Variant="Variant.Outlined"></MudTextField>
-                    <MudTextField T="string" ShrinkLabel Label="Chi nhánh" Variant="Variant.Outlined"></MudTextField>
-                    <MudTextField T="string" ShrinkLabel Label="Nhà máy" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField Margin="Margin.Dense" T="string" ShrinkLabel Label="SAP ID" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField Margin="Margin.Dense" T="string" ShrinkLabel Label="Chi nhánh" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField Margin="Margin.Dense" T="string" ShrinkLabel Label="Nhà máy" Variant="Variant.Outlined"></MudTextField>
                 </MudStack>
             </MudExpansionPanel>
         </MudExpansionPanels>
-
+        
         <MudStack Class="pa-5 gap-1">
             <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="d-none d-md-flex" >Thêm mới</MudButton>
-            <MudButton Variant="Variant.Filled" Color="Color.Default" Class="d-none d-md-flex" >Đóng</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Default" Class="d-none d-md-flex" OnClick="CloseDrawer">Đóng</MudButton>
         </MudStack>
     </MudDrawerContainer>
 </MudDrawer>

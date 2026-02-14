@@ -17,6 +17,7 @@ body {
     scroll-behavior: smooth;
     transition: all 0.3s ease;
     background-color: #fdfdfd !important;
+    box-shadow: 6px 0 12px -2px rgba(0,0,0,0.08);
 }
 
 .app-drawer::-webkit-scrollbar {
@@ -41,8 +42,8 @@ body {
 .app-header {
     height: 64px;
     background-color: #fdfdfd !important;
-    border-bottom: 1px solid #eee;
     color: black !important;
+    border-bottom: 2px solid rgba(0,0,0,0.18);
 }
 
 .app-header .mud-toolbar {
@@ -59,7 +60,7 @@ body {
 
 .app-body {
     background-color: #F5F5F5 !important;
-    padding: 20px 24px !important;
+    padding: 30px 40px 0 40px !important;
     min-height: calc(100vh - 64px);
 }
 
@@ -85,8 +86,8 @@ body {
 }
 
 .sidebar-root .mud-nav-item a.mud-nav-link.active {
-    border-left: 3px solid #7c3aed;
-    color: #7c3aed !important;
+    border-left: 3px solid #594ae2;
+    color: #594ae2 !important;
     background-color: unset !important;
     font-weight: 700 !important;
     font-size: 14px;
@@ -99,7 +100,7 @@ body {
 }
 
 .sidebar-root .mud-nav-item a.mud-nav-link.active .mud-nav-link-icon {
-    color: #7c3aed;
+    color: #594ae2;
     font-size: 20px;
     opacity: 1;
     font-weight: 700 !important;
@@ -130,11 +131,15 @@ body {
     background-color: #17506B !important;
     color: #FFFFFF !important;
     font-weight: bold;
+    height: 45px !important;
+    border-radius: 6px !important;
 }
 
 .btn-login:disabled {
     color: #FFFFFF !important;
     background-color: #F5F5F5 !important;
+    height: 45px !important;
+    border-radius: 6px !important;
 }
 
 .btn-login:disabled:hover {
@@ -143,13 +148,9 @@ body {
 
 .mud-button-root {
     border-radius: 6px !important;
-    padding: 10px !important;
-    height: 45px !important;
+    padding: 0px 10px !important;
+    height: 36px;
 }
-
-/*.mud-input {
-    height: 45px !important;
-}*/
 
 .mud-alert-position {
     display: flex;
@@ -224,17 +225,22 @@ body {
 }
 
 .app-breadcrumb .mud-breadcrumb-item.mud-disabled a {
-    color: #7c3aed;
+    color: #594ae2;
     font-weight: 700;
     letter-spacing: 0.5px;
 }
 
+    .app-breadcrumb .mud-breadcrumb-item {
+        color: black;
+        font-weight: 600;
+    }
 
-.add-user-drawer {
-    border-radius: 10px 0 0 10px;
-    overflow: hidden;
-    background-color: #ffffff;
-}
+
+    .add-user-drawer {
+        border-radius: 10px 0 0 10px;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
 
 .add-user-drawer .mud-drawer-header {
     padding: 20px 24px;
