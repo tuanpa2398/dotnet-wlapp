@@ -3,18 +3,23 @@
 
 <PageTitle>Quản lý người dùng</PageTitle>
 
-<MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+<MudPaper Class="d-flex" Elevation="0">
+    <MudBreadcrumbs Class="app-breadcrumb" Items="_items"></MudBreadcrumbs>
+    <MudSpacer />
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="d-none d-md-flex" OnClick="OpenDrawer">thêm mới</MudButton>
+</MudPaper>
 
-<MudDataGrid Items="users" ShowMenuIcon="false" ShowColumnOptions="false"
+
+<MudDataGrid Items="users" ShowMenuIcon="false" ShowColumnOptions="false" 
              Hover="true"
              Bordered="true"
              Striped="true">
     <ToolBarContent>
-        <MudText Typo="Typo.h6" Style="color: #594ae2">Danh sách người dùng</MudText>
+        <MudText Typo="Typo.h6" Color="Color.Primary">Danh sách người dùng</MudText>
         <MudSpacer />
         <MudSpacer />
         <MudTextField Variant="Variant.Outlined" Placeholder=" Tìm kiếm theo mã hoặc tên nhân viên..." Adornment="Adornment.Start" Immediate="true"
-                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Small" Class="mt-0"></MudTextField>
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Small" Class="mt-0" />
     </ToolBarContent>
     <Columns>
         <PropertyColumn Property="x => x.Username" Title="Username" Sortable="false" Filterable="true"/>
@@ -23,19 +28,61 @@
         <PropertyColumn Property="x => x.Branch" Title="Branch" Sortable="false" Filterable="true" />
         <PropertyColumn Property="x => x.Factory" Title="Factory" Sortable="false" Filterable="true" />
     </Columns>
+    <PagerContent>
+        <MudDataGridPager T="User"/>
+    </PagerContent>
 </MudDataGrid>
 
+<MudDrawer Class="add-user-drawer" Width="500px" @bind-Open="@_open" Anchor="Anchor.End" Elevation="1" Variant="@DrawerVariant.Temporary" OverlayAutoClose="false">
+    <MudDrawerHeader Class="d-flex justify-space-between">
+        <MudText Typo="Typo.h6">Thêm mới người dùng</MudText>
+        <MudIcon Icon="@Icons.Material.Filled.Close" Title="Đóng" Class="cursor-pointer" @onclick="CloseDrawer" />
+    </MudDrawerHeader>
+    <MudDrawerContainer>
+        <MudExpansionPanels MultiExpansion="true">
+            <MudExpansionPanel Text="Thông tin cơ bản" Expanded="true" HeaderClass="header-panel" Disabled="true">
+                <MudStack Class="d-flex gap-1">
+                    <MudTextField T="string" ShrinkLabel Label="Họ tên" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField T="string" ShrinkLabel Label="Mã nhân viên" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField T="string" ShrinkLabel Label="Mật khẩu" Variant="Variant.Outlined" InputType="@_inputType"
+                                     Adornment="Adornment.End"
+                                  AdornmentIcon="@_iconPassword"
+                                  OnAdornmentClick="TogglePassword"
+                                  AdornmentAriaLabel="Hiện/ẩn mật khẩu">
+                     </MudTextField>
+                    <MudTextField T="string" ShrinkLabel Label="Vai trò" Variant="Variant.Outlined"></MudTextField>
+                </MudStack>
+            </MudExpansionPanel>
+            <MudExpansionPanel Text="Đồng bộ SAP" Expanded="true" HeaderClass="header-panel" Disabled="true">
+                <MudStack Class="d-flex gap-1">
+                    <MudTextField T="string" ShrinkLabel Label="SAP ID" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField T="string" ShrinkLabel Label="Chi nhánh" Variant="Variant.Outlined"></MudTextField>
+                    <MudTextField T="string" ShrinkLabel Label="Nhà máy" Variant="Variant.Outlined"></MudTextField>
+                </MudStack>
+            </MudExpansionPanel>
+        </MudExpansionPanels>
 
+        <MudStack Class="pa-5 gap-1">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="d-none d-md-flex" >Thêm mới</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Default" Class="d-none d-md-flex" >Đóng</MudButton>
+        </MudStack>
+    </MudDrawerContainer>
+</MudDrawer>
 
 
 @code {
-    public List<User> users = new List<User>();
+    private List<User> users = new List<User>();
 
     private List<BreadcrumbItem> _items =
     [
         new("Trang chủ", href: "/"),
         new("Quản lý người dùng", href: null, disabled: true)
     ];
+
+    private bool _open = false;
+    private string _iconPassword = Icons.Material.Filled.VisibilityOff;
+    private bool _showPassword = false;
+    private InputType _inputType = InputType.Password;
 
     protected override async Task OnInitializedAsync()
     {
@@ -59,5 +106,31 @@
         }
         
         return Task.FromResult(users);
+    }
+
+    private void OpenDrawer()
+    {
+        _open = true;
+    }
+
+    private void CloseDrawer()
+    {
+        _open = false;
+    }
+
+    private void TogglePassword()
+    {
+        _showPassword = !_showPassword;
+
+        if (_showPassword)
+        {
+            _inputType = InputType.Text;
+            _iconPassword = Icons.Material.Filled.Visibility;
+        }
+        else
+        {
+            _inputType = InputType.Password;
+            _iconPassword = Icons.Material.Filled.VisibilityOff;
+        }
     }
 }

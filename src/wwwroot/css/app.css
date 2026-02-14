@@ -147,9 +147,9 @@ body {
     height: 45px !important;
 }
 
-.mud-input {
+/*.mud-input {
     height: 45px !important;
-}
+}*/
 
 .mud-alert-position {
     display: flex;
@@ -229,4 +229,38 @@ body {
     letter-spacing: 0.5px;
 }
 
-    
+
+.add-user-drawer {
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.add-user-drawer .mud-drawer-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #fcfcfc;
+}
+
+.add-user-drawer .mud-typography-h6 {
+    font-weight: 600;
+}
+
+.add-user-drawer .mud-drawer-container {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.add-user-drawer .mud-drawer-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.add-user-drawer .mud-drawer-container::-webkit-scrollbar-thumb {
+    background: #e5e7eb;
+    border-radius: 10px;
+}
+
+.header-panel .mud-expand-panel-text {
+    font-weight: bold !important;
+    color: black;
+}
