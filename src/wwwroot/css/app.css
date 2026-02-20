@@ -190,8 +190,10 @@ body {
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 20px;
-    background-color: #2196f30f;
+    background: #f2f2f2;
 }
+
+
 
 .app-fieldset legend {
     border: 1px solid #ddd;
@@ -212,6 +214,10 @@ body {
 .app-fieldset .mud-alert .mud-alert-message p {
     font-size: 13px !important;
     font-weight: 800;
+}
+
+.app-fieldset .mud-alert:hover {
+    background-color: #E6F0FA;
 }
 
 /*END FIELD SET*/
